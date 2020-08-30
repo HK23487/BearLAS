@@ -17,7 +17,7 @@ namespace BearLas
 
 		void Fill(int _R, int _C, double _Init = 0.0);
 
-		std::vector<Vector> VectorType();
+		std::vector<Vector>& VectorType();
 		void operator=(std::vector<Vector> _Rows);
 
 		std::vector<int> Dimensions();

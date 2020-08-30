@@ -23,7 +23,7 @@ namespace BearLas
 		rows.resize(_R, v);
 	}
 
-	std::vector<Vector> Matrix::VectorType() {
+	std::vector<Vector>& Matrix::VectorType() {
 		return rows;
 	}
 	void Matrix::operator=(std::vector<Vector> _Rows) {

@@ -22,7 +22,7 @@ namespace BearLas
 
 		void Fill(int _Length, double _Init = 0.0);
 
-		std::vector<double> VectorType();
+		std::vector<double>& VectorType();
 		void operator= (std::vector<double> _Set);
 
 		int Length();

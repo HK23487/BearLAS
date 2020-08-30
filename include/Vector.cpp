@@ -18,7 +18,7 @@ namespace BearLas
 		length = _Length;
 	}
 
-	std::vector<double> Vector::VectorType() {
+	std::vector<double>& Vector::VectorType() {
 		return values;
 	}
 	void Vector::operator=(std::vector<double> _Set) {

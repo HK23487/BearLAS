@@ -143,99 +143,57 @@
 namespace BearLas {
 
 #ifdef LAS_UNIT_VECTORS
-	 Vector I({ 1, 0, 0 });
-	 Vector J({ 0, 1, 0 });
-	 Vector K({ 0, 0, 1 });
+	 extern Vector I;
+	 extern Vector J;
+	 extern Vector K;
 #elif defined LAS_ALL
-	 Vector I({ 1, 0, 0 });
-	 Vector J({ 0, 1, 0 });
-	 Vector K({ 0, 0, 1 });
+	 extern Vector I;
+	 extern Vector J;
+	 extern Vector K;
 #endif
 
 #ifdef LAS_ID_MATRIX
-	 Matrix IDMatrix_2D({ \
-		Vector({1, 0}),
-		Vector({0, 1})
-		});
-	 Matrix IDMatrix_3D({ \
-		Vector({1, 0, 0}),
-		Vector({0, 1, 0}),
-		Vector({0, 0, 1})
-		});
-	 Matrix IDMatrix_4D({ \
-		Vector({1, 0, 0, 0}),
-		Vector({0, 1, 0, 0}),
-		Vector({0, 0, 1, 0}),
-		Vector({0, 0, 0, 1})
-		});
+	 extern Matrix IDMatrix_2D;
+	 extern Matrix IDMatrix_3D;
+	 extern Matrix IDMatrix_4D;
 #elif defined LAS_ALL
-	 Matrix IDMatrix_2D({ \
-		Vector({1, 0}),
-		Vector({0, 1})
-		});
-	 Matrix IDMatrix_3D({ \
-		Vector({1, 0, 0}),
-		Vector({0, 1, 0}),
-		Vector({0, 0, 1})
-		});
-	 Matrix IDMatrix_4D({ \
-		Vector({1, 0, 0, 0}),
-		Vector({0, 1, 0, 0}),
-		Vector({0, 0, 1, 0}),
-		Vector({0, 0, 0, 1})
-		});
+	 extern Matrix IDMatrix_2D;
+	 extern Matrix IDMatrix_3D;
+	 extern Matrix IDMatrix_4D;
 #endif
 
 #ifdef LAS_PLANE_CALC
-	Matrix _Plane_Rotate(double _Theta) 
-	{	return Matrix({ \
-			Vector({ std::cos(_Theta), std::sin(_Theta) * -1 }),
-			Vector({ std::sin(_Theta), std::cos(_Theta)      })
-			});	}
+	 Matrix _Plane_Rotate(double _Theta)
+		 ;
 
-	Matrix _Plane_Rotate(double _Theta, double _S)
-	{	return Matrix({ \
-			Vector({ std::cos(_Theta) * _S, std::sin(_Theta) * _S * -1 }),
-			Vector({ std::sin(_Theta) * _S, std::cos(_Theta) * _S      })
-			}); }
+	 Matrix _Plane_Rotate(double _Theta, double _S)
+		 ;
 	
-	Matrix _Plane_Shear(short _Dir = 1)
-	{	return Matrix({ \
-			Vector({ 1.0 * _Dir, 1.0 * _Dir }),
-			Vector({ 0,          1.0 * _Dir })
-			}); }
+	 Matrix _Plane_Shear(short _Dir = 1)
+		 ;
 #elif defined LAS_ALL
-	Matrix _Plane_Rotate(double _Theta)
-	{	return Matrix({ \
-		Vector({ std::cos(_Theta), std::sin(_Theta) * -1 }),
-		Vector({ std::sin(_Theta), std::cos(_Theta)      })
-			}); }
+	 Matrix _Plane_Rotate(double _Theta)
+		 ;
 
-	Matrix _Plane_Rotate(double _Theta, double _S)
-	{	return Matrix({ \
-		Vector({ std::cos(_Theta) * _S, std::sin(_Theta) * _S * -1 }),
-		Vector({ std::sin(_Theta) * _S, std::cos(_Theta) * _S      })
-			}); }
+	 Matrix _Plane_Rotate(double _Theta, double _S)
+		 ;
 
-	Matrix _Plane_Shear(short _Dir = 1)
-	{	return Matrix({ \
-		Vector({ 1.0 * _Dir, 1.0 * _Dir }),
-		Vector({ 0,          1.0 * _Dir })
-			}); }
+	 Matrix _Plane_Shear(short _Dir = 1)
+		 ;
 #endif
 
 #ifdef LAS_CONSTANTS
-	constexpr double _PI			  = 3.1415926535897932384626;
-	constexpr double _E				  = 2.7182818284590452353602;
-	constexpr double _PHI			  = 1.6180339887498948482045;
-	constexpr std::complex<double> _I = std::complex<double>(0.0, 1.0);
-	const	  double _SQRT2			  = std::sqrt(2.0);
+	extern double _PI	;
+	extern double _E		;
+	extern double _PHI	;
+	extern std::complex<double> _I;
+	extern double _SQRT2			 ;
 #elif defined LAS_ALL
-	constexpr double _PI			  = 3.1415926535897932384626;
-	constexpr double _E				  = 2.7182818284590452353602;
-	constexpr double _PHI			  = 1.6180339887498948482045;
-	constexpr std::complex<double> _I = std::complex<double>(0.0, 1.0);
-	const	  double _SQRT2			  = std::sqrt(2.0);
+	extern double _PI;
+	extern double _E;
+	extern double _PHI;
+	extern std::complex<double> _I;
+	extern double _SQRT2;
 #endif
 
 }

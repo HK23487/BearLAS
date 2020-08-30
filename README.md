@@ -2,10 +2,11 @@
 A C++ library for linear algebra functions and types.
 
 <br>
-Current Version: BearLAS Alpha 6.0 (8/12/2020)
+Current Version: BearLAS Alpha 7.0 (8/30/2020)
 <br>
 Past Versions:<br>
 <br>
+Alpha 6.0 (8/12/2020)<br>
 Alpha 5.0 (8/11/2020)<br>
 Alpha 4.0 (8/9/2020)<br>
 Alpha 3.0 (8/7/2020)<br>

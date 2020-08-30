@@ -21,7 +21,7 @@ does not agree to the following terms, he/she MAY NOT USE THIS SOFTWARE.
 
 \~~~~~~~~~~~~
 
-Copyright (c) 2020 by Hyun-Jin Kim.
+Copyright (c) 2020 by HK23487.
 
 \~~~~~~ License \~~~~~~
 

@@ -12,6 +12,7 @@ Alpha 3.0 (8/7/2020)<br>
 Alpha 2.0 (8/6/2020)<br>
 Alpha 1.0 (8/4/2020)<br>
 <br>
+
 \~~~~~~~~~~~~
 
 Please read the following agreements and license before using this software. If the user 

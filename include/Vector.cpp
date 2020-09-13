@@ -21,6 +21,10 @@ namespace BearLas
 	std::vector<double>& Vector::VectorType() {
 		return values;
 	}
+	const std::vector<double> Vector::VectorType() const {
+		return values;
+	}
+
 	void Vector::operator=(std::vector<double> _Set) {
 		values = _Set;
 		length = values.size();
@@ -29,11 +33,18 @@ namespace BearLas
 	int Vector::Length() {
 		return length;
 	}
+	const int Vector::Length() const {
+		return length;
+	}
 
 
 	double& Vector::operator[](int _Id) {
 		return values[_Id];
 	}
+	const double Vector::operator[](int _Id) const {
+		return values[_Id];
+	}
+
 	void Vector::operator=(Vector _Set) {
 		values = _Set.values;
 		length = _Set.length;
@@ -51,6 +62,18 @@ namespace BearLas
 			return Vector();
 		}
 	}
+	Vector Vector::operator-(Vector _A) {
+		if (length == _A.length) {
+			Vector ret; ret.Fill(length);
+			for (int i = 0; i < length; i++) {
+				ret[i] = values[i] - _A[i];
+			}
+			return ret;
+		}
+		else {
+			return Vector();
+		}
+	}
 	Vector Vector::operator*(double _S) {
 		Vector ret;
 		ret.Fill(length);
@@ -59,8 +82,72 @@ namespace BearLas
 		}
 		return ret;
 	}
+	Vector Vector::operator/(double _S) {
+		Vector ret;
+		ret.Fill(length);
+		for (int i = 0; i < length; i++) {
+			ret[i] = values[i] / _S;
+		}
+		return ret;
+	}
+
+
+	Vector Vector::operator+(Vector _A) const {
+		if (length == _A.length) {
+			Vector ret; ret.Fill(length);
+			for (int i = 0; i < length; i++) {
+				ret[i] = values[i] + _A[i];
+			}
+			return ret;
+		}
+		else {
+			return Vector();
+		}
+	}
+	Vector Vector::operator-(Vector _A) const {
+		if (length == _A.length) {
+			Vector ret; ret.Fill(length);
+			for (int i = 0; i < length; i++) {
+				ret[i] = values[i] - _A[i];
+			}
+			return ret;
+		}
+		else {
+			return Vector();
+		}
+	}
+	Vector Vector::operator*(double _S) const {
+		Vector ret;
+		ret.Fill(length);
+		for (int i = 0; i < length; i++) {
+			ret[i] = values[i] * _S;
+		}
+		return ret;
+	}
+	Vector Vector::operator/(double _S) const {
+		Vector ret;
+		ret.Fill(length);
+		for (int i = 0; i < length; i++) {
+			ret[i] = values[i] / _S;
+		}
+		return ret;
+	}
+
+
 
 	double Vector::Dot(Vector _V) {
+		double ret = 0;
+		if (length == _V.length) {
+			for (int i = 0; i < length; i++) {
+				ret += values[i] * _V[i];
+			}
+			return ret;
+		}
+		else {
+			return 0.0001e-10;
+		}
+	}
+	double Vector::Dot(Vector _V) const {
 		double ret = 0;
 		if (length == _V.length) {
 			for (int i = 0; i < length; i++) {
@@ -100,10 +187,45 @@ namespace BearLas
 			return Vector();
 		}
 	}
+	Vector Vector::Cross(Vector _V) const {
+		if (length == _V.length) {
+
+			if (length == 2) {
+				Vector ret; ret.Fill(1);
+				ret[0] = values[0] * _V[1] - _V[0] * values[1];
+				return ret;
+			}
+			else if (length == 3) {
+				Vector ret; ret.Fill(3);
+				std::vector<double> V = values;
+				std::vector<double> W = _V.values;
+
+				ret[0] = V[1] * W[2] - W[1] * V[2];
+				ret[1] = V[2] * W[0] - W[2] * V[0];
+				ret[2] = V[0] * W[1] - W[0] * V[1];
+
+				return ret;
+
+			}
+			else {
+				return Vector();
+			}
+		}
+		else {
+			return Vector();
+		}
+	}
 
 
 
 
+
+	/*
+		+------------------------------------+
+		| WARNING: const not yet implemented |
+		|         for Vector_Complex.        |
+		+------------------------------------+
+	*/
 
 
 	Vector_Complex::Vector_Complex() {

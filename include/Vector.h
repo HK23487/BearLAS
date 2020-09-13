@@ -23,25 +23,48 @@ namespace BearLas
 		void Fill(int _Length, double _Init = 0.0);
 
 		std::vector<double>& VectorType();
+		const std::vector<double> VectorType() const;
 		void operator= (std::vector<double> _Set);
 
 		int Length();
+		const int Length() const;
 
 
 		double& operator[] (int _Id);
+		const double operator[] (int _Id) const;
+
 		void operator= (Vector _Set);
 
 		Vector operator+ (Vector _A);
+		Vector operator- (Vector _S);
 		Vector operator* (double _S);
+		Vector operator/ (double _S);
+
+		Vector operator+ (Vector _A) const;
+		Vector operator- (Vector _S) const;
+		Vector operator* (double _S) const;
+		Vector operator/ (double _S) const;
 
 		double Dot(Vector _V);
+		double Dot(Vector _V) const;
+
 		Vector Cross(Vector _V);
+		Vector Cross(Vector _V) const;
+
 
 	private:
 		std::vector<double> values;
 		int length;
 
 	};
+
+
+	/*
+		+------------------------------------+
+		| WARNING: const not yet implemented |
+		|         for Vector_Complex.        |
+		+------------------------------------+
+	*/
 
 
 	class Vector_Complex 

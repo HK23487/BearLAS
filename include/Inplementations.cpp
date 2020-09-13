@@ -6,19 +6,19 @@ namespace BearLas
 {
 
 
-	std::string ToString(Vector v) {
+	std::string ToString(const Vector& v) {
 		std::string ret;
 		for (double d : v.VectorType()) {
 			ret += (d + '\n');
 		}
 		return ret;
 	}
-	void PrintOut(Vector v) {
+	void PrintOut(const Vector& v) {
 		for (double d : v.VectorType()) {
 			std::cout << d << std::endl;
 		}
 	}
-	void PrintOut(Matrix m, int width) {
+	void PrintOut(const Matrix& m, int width) {
 		for (Vector v : m.VectorType()) {
 			for (double d : v.VectorType()) {
 				std::cout << std::setw(width) << std::left << d;
@@ -65,7 +65,7 @@ namespace BearLas
 		return Vector(ret);
 	}
 
-	Vector _Cramer_Solution(Matrix A, Vector b) {
+	Vector _Cramer_Solution(const Matrix& A, const Vector& b) {
 		if (A.Square()) {
 			double det = A.Det();
 			if (det != 0) {
@@ -119,14 +119,14 @@ namespace BearLas
 	}
 
 
-	int _Leading(Vector V) {
+	int _Leading(const Vector& V) {
 		for (int i = 0; i < V.Length(); i++) {
 			if (V[i] != 0) return i;
 			else continue;
 		}
 		return -1;
 	}
-	bool _Row_Echelon_Form(Matrix A, double lead) {
+	bool _Row_Echelon_Form(const Matrix& A, double lead) {
 		if (A.Square()) {
 			for (int i = 0; i < A.Dimensions()[0]; i++) {
 				if (_Leading(A[i]) != i) return false;
@@ -177,7 +177,7 @@ namespace BearLas
 		}
 	}
 
-	Matrix _Inverse(Matrix A) {
+	Matrix _Inverse(const Matrix& A) {
 		if (A.Square()) {
 			Matrix ret; ret.Fill(A.Dimensions()[0], A.Dimensions()[1]);
 			Matrix I; I.Fill(A.Dimensions()[0], A.Dimensions()[1]);
@@ -208,14 +208,14 @@ namespace BearLas
 		}
 	}
 
-	Matrix _Adjugate(Matrix A) {
+	Matrix _Adjugate(const Matrix& A) {
 		return _Inverse(A) * A.Det();
 	}
-	Matrix _Adjoint(Matrix A) {
+	Matrix _Adjoint(const Matrix& A) {
 		return _Adjugate(A);
 	}
 
-	Matrix _Transpose(Matrix A) {
+	Matrix _Transpose(const Matrix& A) {
 		std::vector<Vector> rows = A.VectorType();
 		std::vector<Vector> retv; retv.resize(A.Dimensions()[1], Zeros(A.Dimensions()[0]));
 		for (int i = 0; i < rows.size(); i++) {
@@ -226,11 +226,11 @@ namespace BearLas
 		return retv;
 	}
 
-	Matrix _Cofactor(Matrix A) {
+	Matrix _Cofactor(const Matrix& A) {
 		return _Transpose(_Inverse(A));
 	}
 
-	bool _Symmetric(Matrix A) {
+	bool _Symmetric(const Matrix& A) {
 		Matrix T = _Transpose(A);
 		for (int i = 0; i < A.Dimensions()[0]; i++) {
 			for (int j = 0; j < A.Dimensions()[1]; j++) {

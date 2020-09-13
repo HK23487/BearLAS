@@ -18,22 +18,35 @@ namespace BearLas
 		void Fill(int _R, int _C, double _Init = 0.0);
 
 		std::vector<Vector>& VectorType();
+		const std::vector<Vector> VectorType() const;
 		void operator=(std::vector<Vector> _Rows);
 
 		std::vector<int> Dimensions();
+		const std::vector<int> Dimensions() const;
 
 
 		Vector& operator[](int _Id);
+		const Vector operator[](int _Id) const;
+
 		void operator=(Matrix _Set);
 
 		Matrix operator+(Matrix _A);
 		Vector operator*(Vector _V);
 		Matrix operator*(double _S);
+		Matrix operator/(double _S);
 		Matrix operator*(Matrix _M);
 
+		Matrix operator+(Matrix _A) const;
+		Vector operator*(Vector _V) const;
+		Matrix operator*(double _S) const;
+		Matrix operator/(double _S) const;
+		Matrix operator*(Matrix _M) const;
+
 		double Det();
+		double Det() const;
 
 		bool Square();
+		bool Square() const;
 
 	private:
 
@@ -43,6 +56,12 @@ namespace BearLas
 
 	};
 
+	/*
+		+------------------------------------+
+		| WARNING: const not yet implemented |
+		|         for Matrix_Complex.        |
+		+------------------------------------+
+	*/
 
 
 	class Matrix_Complex

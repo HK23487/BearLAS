@@ -88,10 +88,15 @@ Settings: The user may #define certain macros for certain provisions.
 LAS_ALL:				Provides all settings
 
 LAS_UNIT_VECTORS:		Provides I, J, K unit vectors
+
 LAS_ID_MATRIX:			Provides 2x2, 3x3, and 4x4 indentity matrices
+
 LAS_PLANE_CALC:			Provides 2D plane calculation packages
+
 LAS_FORCE_NO_OPERATORS:		Forces no Matrix/Vector operators
+
 LAS_CONSTANTS:			Provides mathematical constants such as pi or e
+
 
 Example Program:
 

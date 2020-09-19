@@ -59,7 +59,7 @@ HIS/HER OWN USE, HE/SHE IS RESPONSIBLE FOR MALFUNCTIONS OR BUGS OF ANY KIND.
 
 \~~~~~~ Features \~~~~~~
 
-All assets are contained inside the `blas` ( `BearLas` if 7.1 or under) namespace.
+All assets are contained inside the `blas` ( `BearLas` if alpha 7.1 or under) namespace.
 
 BearLas::Vector - A class for a Vector object.
 BearLas::Matrix - A class for a Matrix object.

@@ -1,18 +1,18 @@
-# BearLAS
-A C++ library for linear algebra functions and types.
+# BearLAS 
+A portable linear algebra library that can be used for various applications.
 
-<br>
-Current Version: BearLAS Alpha 7.0 (8/30/2020)
-<br>
-Past Versions:<br>
-<br>
-Alpha 6.0 (8/12/2020)<br>
-Alpha 5.0 (8/11/2020)<br>
-Alpha 4.0 (8/9/2020)<br>
-Alpha 3.0 (8/7/2020)<br>
-Alpha 2.0 (8/6/2020)<br>
-Alpha 1.0 (8/4/2020)<br>
-<br>
+Current Version: BearLAS Alpha 8.0 (9/19/2020)
+
+Past Versions:
+
+Alpha 7.1 (9/13/2020)
+Alpha 7.0 (8/30/2020)
+Alpha 6.0 (8/12/2020)
+Alpha 5.0 (8/11/2020)
+Alpha 4.0 (8/9/2020)
+Alpha 3.0 (8/7/2020)
+Alpha 2.0 (8/6/2020)
+Alpha 1.0 (8/4/2020)
 
 \~~~~~~~~~~~~
 
@@ -21,7 +21,7 @@ does not agree to the following terms, he/she MAY NOT USE THIS SOFTWARE.
 
 \~~~~~~~~~~~~
 
-Copyright (c) 2020 by HK23487.
+Copyright (c) 2020 by Hyun-Jin Kim.
 
 \~~~~~~ License \~~~~~~
 
@@ -51,7 +51,7 @@ HIS/HER OWN USE, HE/SHE IS RESPONSIBLE FOR MALFUNCTIONS OR BUGS OF ANY KIND.
 
 \~~~~~~ Features \~~~~~~
 
-All assets are contained inside the BearLas namespace.
+All assets are contained inside the `blas` ( `BearLas` if 7.1 or under) namespace.
 
 BearLas::Vector - A class for a Vector object.
 BearLas::Matrix - A class for a Matrix object.
@@ -61,42 +61,44 @@ and can get its std::string value.
 A Matrix can be printed, multiplied or added by a Matrix, Vector, or a scalar (double),
 but cannot get its std:string value.
 
-The Range() function can help when creating large Vectors. Its parameters are start, step, and stop.
+The `Range()` function can help when creating large Vectors. Its parameters are start, step, and stop.
 Use like this:
 
-\~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 Vector v = Range(0, 0.1, 0.7);
 PrintOut(v);
 
 ------------------------------
 Output:
-<br>
-0<br>
-0.1<br>
-0.2<br>
-0.3<br>
-0.4<br>
-0.5<br>
-0.6<br>
-0.7<br>
 
-\~~~~~~~~~~~~
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+
+~~~~~~~~~~~~
 
 Settings: The user may #define certain macros for certain provisions.
 
 LAS_ALL:				Provides all settings
 
-LAS_UNIT_VECTORS:		Provides I, J, K unit vectors<br>
-LAS_ID_MATRIX:			Provides 2x2, 3x3, and 4x4 indentity matrices<br>
-LAS_PLANE_CALC:			Provides 2D plane calculation packages<br>
-LAS_LITERALS:			Provides literals (complex, matrix operations)<br>
-LAS_CONSTANTS:			Provides mathematical constants such as pi or e<br>
+LAS_UNIT_VECTORS:		Provides I, J, K unit vectors
+LAS_ID_MATRIX:			Provides 2x2, 3x3, and 4x4 indentity matrices
+LAS_PLANE_CALC:			Provides 2D plane calculation packages
+LAS_FORCE_NO_OPERATORS:		Forces no Matrix/Vector operators
+LAS_CONSTANTS:			Provides mathematical constants such as pi or e
 
 Example Program:
 
 -------------------------------------
-~~~~~~~
+
+~~~~~
+
 #include <iostream>
 #define LAS_ALL
 #include "BearLAS.h"
@@ -116,10 +118,10 @@ int main() {
 	std::cin.get();
 	return 0;
 }
-~~~~~~~
+
 -------------------------------------
 Output:
-<br>
-2<br>
-1<br>
-2<br>
+
+2
+1
+2

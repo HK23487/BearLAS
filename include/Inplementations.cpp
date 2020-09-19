@@ -2,7 +2,7 @@
 #include "Implementations.h"
 
 
-namespace BearLas
+namespace blas
 {
 
 

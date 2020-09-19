@@ -1,7 +1,7 @@
 #include "Matrix.h"
 
 
-namespace BearLas
+namespace blas
 {
 
 	Matrix::Matrix() {

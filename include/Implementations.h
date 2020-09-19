@@ -5,14 +5,26 @@
 
 #include "Vector.h"
 #include "Matrix.h"
+#include "Sized.h"
 #include <string>
 #include <iomanip>
 #include <iostream>
 
-namespace BearLas {
+namespace blas {
 
 	std::string ToString(const Vector& v);
 	void PrintOut(const Vector& v);
+
+	template <size_t S>
+	std::string ToString(const SizedVector<S>& v) {
+		return ToString(v.BlasVector());
+	}
+
+	template <size_t S>
+	void PrintOut(const SizedVector<S>& v) {
+		PrintOut(v.BlasVector());
+	}
+
 	void PrintOut(const Matrix& m, int width = 4);
 
 	void PrintOut(Vector_Complex v);

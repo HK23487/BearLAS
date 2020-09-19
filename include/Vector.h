@@ -8,7 +8,7 @@
 #include <math.h>
 #include <complex>
 
-namespace BearLas
+namespace blas
 {
 	
 	typedef std::complex<double> Complex;

@@ -1,9 +1,12 @@
 BearLAS - A portable linear algebra library that can be used for various applications.
 
-	Current Version: BearLAS Alpha 6.0 (8/12/2020)
+	Current Version: BearLAS Alpha 8.0 (9/19/2020)
 
 	Past Versions:
 
+	Alpha 7.1 (9/13/2020)
+	Alpha 7.0 (8/30/2020)
+	Alpha 6.0 (8/12/2020)
 	Alpha 5.0 (8/11/2020)
 	Alpha 4.0 (8/9/2020)
 	Alpha 3.0 (8/7/2020)
@@ -17,7 +20,7 @@ BearLAS - A portable linear algebra library that can be used for various applica
 
 	~~~~~~~~~~~~
 
-	Copyright (c) 2020 by Hyun-Jin Kim.
+	Copyright (c) 2020 by HK23487.
 
 	~~~~~~License~~~~~~
 
@@ -86,7 +89,7 @@ BearLAS - A portable linear algebra library that can be used for various applica
 	LAS_UNIT_VECTORS:		Provides I, J, K unit vectors
 	LAS_ID_MATRIX:			Provides 2x2, 3x3, and 4x4 indentity matrices
 	LAS_PLANE_CALC:			Provides 2D plane calculation packages
-	LAS_LITERALS:			Provides literals (complex, matrix operations)
+	LAS_FORCE_NO_OPERATORS:	Forces no Matrix/Vector operators
 	LAS_CONSTANTS:			Provides mathematical constants such as pi or e
 
 	Example Program:

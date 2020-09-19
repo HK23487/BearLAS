@@ -7,7 +7,7 @@
 #include "Vector.h"
 #include "Implementations.h"
 
-namespace BearLas {
+namespace blas {
 
 	namespace Literals {
 
@@ -25,11 +25,19 @@ namespace BearLas {
 
 		}
 
-		Vector operator*(Vector b, Matrix A);
+		Vector operator*(const Vector& b, const Matrix& A);
 
-		Vector operator*(double a, Vector b);
+		Vector operator*(const double& a, const Vector& b);
 
-		Matrix operator*(double a, Matrix b);
+		Matrix operator*(const double& a, const Matrix& b);
+
+		Vector operator/=(Vector& lhs, const double& rhs);
+
+		Matrix operator/=(Matrix& lhs, const double& rhs);
+
+		Vector operator*=(Vector& lhs, const double& rhs);
+
+		Matrix operator*=(Matrix& lhs, const double& rhs);
 
 	}
 

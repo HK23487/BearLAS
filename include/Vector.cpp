@@ -1,6 +1,6 @@
 #include "Vector.h"
 
-namespace BearLas
+namespace blas
 {
 	
 	Vector::Vector() {

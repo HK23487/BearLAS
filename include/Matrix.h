@@ -5,7 +5,7 @@
 
 #include "Vector.h"
 
-namespace BearLas
+namespace blas
 {
 
 	class Matrix

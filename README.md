@@ -6,13 +6,21 @@ Current Version: BearLAS Alpha 8.0 (9/19/2020)
 Past Versions:
 
 Alpha 7.1 (9/13/2020)
+
 Alpha 7.0 (8/30/2020)
+
 Alpha 6.0 (8/12/2020)
+
 Alpha 5.0 (8/11/2020)
+
 Alpha 4.0 (8/9/2020)
+
 Alpha 3.0 (8/7/2020)
+
 Alpha 2.0 (8/6/2020)
+
 Alpha 1.0 (8/4/2020)
+
 
 \~~~~~~~~~~~~
 
